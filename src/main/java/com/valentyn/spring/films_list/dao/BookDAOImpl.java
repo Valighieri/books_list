@@ -21,4 +21,10 @@ public class BookDAOImpl implements BookDAO {
                 .getResultList();
         return allBooks;
     }
+
+    @Override
+    public void saveBook(Book book) {
+        Session session = sessionFactory.getCurrentSession();
+        session.save(book);
+    }
 }

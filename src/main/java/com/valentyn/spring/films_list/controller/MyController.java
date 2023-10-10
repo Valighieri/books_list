@@ -5,6 +5,7 @@ import com.valentyn.spring.films_list.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.ArrayList;
@@ -26,4 +27,20 @@ public class MyController {
         return "all-books";
     }
 
+    @RequestMapping("/addNewBook")
+    public String addNewBook(Model model) {
+
+        Book book = new Book();
+        model.addAttribute("book", book);
+
+        return "book-info";
+    }
+
+    @RequestMapping("/saveBook")
+    public String saveBook(@ModelAttribute("book") Book book) {
+
+        bookService.saveBook(book);
+
+        return "redirect:/";
+    }
 }

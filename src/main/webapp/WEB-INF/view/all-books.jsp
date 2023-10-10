@@ -15,6 +15,7 @@
     </tr>
 
     <c:forEach var="book" items="${allBooks}">
+
         <tr>
             <td>${book.title}</td>
             <td>${book.author}</td>
@@ -26,6 +27,9 @@
 
 
 <br>
+
+<input type="button" value="Add"
+       onclick="window.location.href = 'addNewBook'"/>
 
 </body>
 </html>
