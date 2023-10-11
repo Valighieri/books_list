@@ -9,4 +9,6 @@ public interface BookService {
 
     void saveBook(Book book);
 
+    Book getBook(int id);
+
 }

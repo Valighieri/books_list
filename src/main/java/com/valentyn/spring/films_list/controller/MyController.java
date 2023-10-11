@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;
@@ -42,5 +43,14 @@ public class MyController {
         bookService.saveBook(book);
 
         return "redirect:/";
+    }
+
+    @RequestMapping("/updateBook")
+    public String updateBook(@RequestParam("bookId") int id, Model model) {
+
+        Book book = bookService.getBook(id);
+        model.addAttribute("book", book);
+
+        return "book-info";
     }
 }

@@ -7,6 +7,8 @@
 
 <form:form action="saveBook" modelAttribute="book">
 
+    <form:hidden path="id"/>
+
     Book title <form:input path="title"/>
     <br><br>
     Author <form:input path="author"/>
