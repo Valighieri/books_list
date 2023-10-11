@@ -12,4 +12,5 @@ public interface BookDAO {
 
     Book getBook(int id);
 
+    void deleteBook(int id);
 }

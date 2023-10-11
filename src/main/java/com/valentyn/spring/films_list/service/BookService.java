@@ -11,4 +11,5 @@ public interface BookService {
 
     Book getBook(int id);
 
+    void deleteBook(int id);
 }

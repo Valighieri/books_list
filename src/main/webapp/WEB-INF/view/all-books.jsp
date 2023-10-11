@@ -21,6 +21,10 @@
             <c:param name="bookId" value="${book.id}"/>
         </c:url>
 
+        <c:url var="deleteButton" value="/deleteBook">
+            <c:param name="bookId" value="${book.id}"/>
+        </c:url>
+
         <tr>
             <td>${book.title}</td>
             <td>${book.author}</td>
@@ -28,6 +32,9 @@
             <td>
                 <input type="button" value="Update"
                 onclick="window.location.href = '${updateButton}'">
+
+                <input type="button" value="Delete"
+                       onclick="window.location.href = '${deleteButton}'">
             </td>
         </tr>
     </c:forEach>

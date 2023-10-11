@@ -53,4 +53,12 @@ public class MyController {
 
         return "book-info";
     }
+
+    @RequestMapping("/deleteBook")
+    public String deleteBook(@RequestParam("bookId") int id) {
+
+        bookService.deleteBook(id);
+
+        return "redirect:/";
+    }
 }
